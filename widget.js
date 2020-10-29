@@ -1,6 +1,6 @@
 let theWheel, channelName, spinCommand, fieldData, cooldown, spins, segments = [];
 
-var jebaited_token = 'hM9BmlHmKDBEalrFBHGBOVYO';
+var jebaited_token;
 var channelId;
 
 let checkPrivileges = (data) => {
@@ -115,6 +115,7 @@ window.addEventListener('onWidgetLoad', function (obj) {
                 });
     channelName = obj["detail"]["channel"]["username"];
     fieldData = obj.detail.fieldData;
+  	jebaited_token = fieldData['jebaited_token'];
     spinCommand = fieldData['spinCommand'];
     cooldown = fieldData['duration'];
     spins = fieldData['spins'];
