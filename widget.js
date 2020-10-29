@@ -37,7 +37,34 @@ window.addEventListener('onEventReceived', function (obj) {
         setTimeout(
             function () {
                 wheelSpinning = false; // set wheel not spinning, you can add callback to SE API here, to add points to `user`
-                //var winningSegment = theWheel.getIndicatedSegment(); //- use this as reference
+              
+              
+                // dom's dumb shit
+              
+                winningSegment = theWheel.getIndicatedSegment();
+              	var message = "The wheel has spoken. @EFNCY has to do the following: " + winningSegment.text;
+              
+           	    
+                  var xhr = new XMLHttpRequest();
+                  xhr.withCredentials = true;
+
+                  xhr.addEventListener("readystatechange", function() {
+                    if(this.readyState === 4) {
+                      console.log(this.responseText);
+                    }
+                  });
+
+                  xhr.open("GET", "https://api.jebaited.net/botMsg/" + jebaited_token + "/" + message);
+
+                  xhr.send();
+              
+              	  setTimeout(function() {
+                    console.log("we're hiding now bruh"); 
+                    $( "#container" ).fadeOut( "slow", function() {
+                      $('#container').hide();
+                    });
+                  }, 6000);
+
             }, cooldown * 1000 + 100);
     } else if (obj.detail.listener === fieldData.listener) {
         const data=obj.detail.event;
@@ -120,7 +147,6 @@ window.addEventListener('onWidgetLoad', function (obj) {
     cooldown = fieldData['duration'];
     spins = fieldData['spins'];
     let tmpsegments = fieldData.segments.replace(" ", "").split(",");
-    let tmpcolors = fieldData.segmentColors.toLowerCase().replace(" ", "").split(",");
     for (let i in fieldData.segments.replace(" ", "").split(",")) {
         segments.push({'text': tmpsegments[i], 'fillStyle': '#111', 'textFillStyle' : '#d5d2d2', 'strokeStyle' : '#9b1415', 'lineWidth' : 5});
     }
@@ -199,5 +225,4 @@ function startSpin() {
         wheelSpinning = true;
     }
 }
-
 
