@@ -18,6 +18,7 @@
 
 ### To post to chat, you need a jebaited token.
 
+**THIS HAS TO BE DONE BY EFNCY AS IT POSTS TO THE CHAT OF WHOEVER AUTHENTICATES IT**
 1. Go to [https://jebaited.net/tokens/](https://jebaited.net/tokens/), login with your StreamElements account.
 1. Go to the API tokens page if not there already.
 1. Click on **scopes** and tick `botMsg`
