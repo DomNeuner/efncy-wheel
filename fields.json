@@ -4,6 +4,11 @@
     "label": "Spin Command",
     "value": "!spin"
   },
+  "jebaited_token": {
+    "type": "text",
+    "label": "Jebaited Token",
+    "value": "insert token here"
+  },
   "segments": {
     "type": "text",
     "label": "Segments, comma separated",
