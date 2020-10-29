@@ -22,7 +22,6 @@ let checkPrivileges = (data) => {
 };
 
 window.addEventListener('onEventReceived', function (obj) {
-  	var jebaited_token = 'hM9BmlHmKDBEalrFBHGBOVYO';
     const skippable = ["bot:counter", "event:test", "event:skip"]; //Array of events coming to widget that are not queued so they can come even queue is on hold
     if (skippable.indexOf(obj.detail.listener) !== -1) return;
     if (obj.detail.listener === "message") {
