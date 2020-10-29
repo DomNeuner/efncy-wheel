@@ -12,7 +12,7 @@
 1. Copy `widget.css` to the CSS tab
 1. Copy `widget.js` to the JS tab
 1. Copy `fields.json` to the Fields tab
-1. Click **done*
+1. Click **done**
 1. Save the overlay and reload.
 
 
