@@ -14,3 +14,12 @@
 1. Copy fields.json to the Fields tab
 1. Click **done*
 1. Save the overlay and reload.
+
+
+### To post to chat, you need a jebaited token.
+
+1. Go to [https://jebaited.net/tokens/](https://jebaited.net/tokens/), login with your StreamElements account.
+1. Go to the API tokens page if not there already.
+1. Click on **scopes** and tick `botMsg`
+1. Click **add token**
+1. Copy the string of characters below to the `jebaited token` field on the widget settings.
